@@ -1,16 +1,9 @@
 require './config/environment'
+class ListsController < ApplicationController 
 
-class ApplicationController < Sinatra::Base
-  configure do
-    set :public_folder, 'public'
-    set :views, 'app/views'
-    enable :sessions
-    set :session_secret, "ToDo secret"
+get '/lists' do
+  erb :showlists
+end
 
-    get '/' do
-      erb :index
-    end
-
-  end
 end
   
